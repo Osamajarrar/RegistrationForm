@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -14,6 +16,7 @@ import java.util.ArrayList;
 public class RegistrationForm extends AppCompatActivity {
     Spinner spinner1,spinner2,spinner3;
     EditText txtEdtName,txtEdtEmail,details;
+    RadioGroup gender;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +27,7 @@ public class RegistrationForm extends AppCompatActivity {
         txtEdtName=findViewById(R.id.edtTxtName);
         txtEdtEmail=findViewById(R.id.edtTxtEmail);
         details=findViewById(R.id.details);
+        gender=findViewById(R.id.gender);
         populateSpinner1();
         populateSpinner2();
         populateSpinner3();
@@ -78,12 +82,19 @@ public class RegistrationForm extends AppCompatActivity {
         String day=spinner1.getSelectedItem().toString();
         String month=spinner2.getSelectedItem().toString();
         String year=spinner3.getSelectedItem().toString();
+        int id = gender.getCheckedRadioButtonId();
+        View radioButton = gender.findViewById(id);
+        int radioId = gender.indexOfChild(radioButton);
+        RadioButton btn = (RadioButton) gender.getChildAt(radioId);
+        String selection = (String) btn.getText();
+
         intent.putExtra("name",name);
         intent.putExtra("email",email);
         intent.putExtra("reason",reason);
         intent.putExtra("day",day);
         intent.putExtra("month",month);
         intent.putExtra("year",year);
+        intent.putExtra("gender",selection);
         startActivity(intent);
     }
 }

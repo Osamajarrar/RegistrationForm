@@ -19,8 +19,10 @@ public class Summary extends AppCompatActivity {
         String day=intent.getStringExtra("day");
         String month=intent.getStringExtra("month");
         String year=intent.getStringExtra("year");
+        String gender=intent.getStringExtra("gender");
+
         TextView summary=findViewById(R.id.summary);
-        summary.setText("Applicant "+name+" is applying to enroll in the android course.\nApplicant's email is "+email+"\nApplicant was born on "+day+"."+month+"."+year+".\nApplicant's Reason of Applying is "+reason);
+        summary.setText("Applicant "+name+" is applying to enroll in the android course.\nApplicant's email is "+email+"\nApplicant was born on "+day+"."+month+"."+year+ ".\nApplicant's Gender is " +gender+".\nApplicant's Reason of Applying is "+reason);
 
 
     }

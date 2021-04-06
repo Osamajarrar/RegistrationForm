@@ -51,6 +51,8 @@
         style="@style/field_title"
         android:text="Date of Birth" />
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,7 +70,42 @@
             android:id="@+id/year"
             style="@style/spinner_style" />
     </LinearLayout>
+    <TextView
+        android:id="@+id/txtGender"
+        style="@style/field_title"
+        android:text="Gender" />
 
+    <RadioGroup
+        android:id="@+id/gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+
+
+            <RadioButton
+                android:id="@+id/Male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Male"
+                android:textColor="@color/white"
+                android:layout_marginRight="10dp"
+                android:buttonTint="@color/white"
+                />
+
+            <RadioButton
+                android:id="@+id/Female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Female"
+                android:textColor="@color/white"
+                android:buttonTint="@color/white"/>
+
+    </RadioGroup>
     <TextView
         android:id="@+id/txtDescription"
         style="@style/field_title"
